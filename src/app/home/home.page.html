@@ -1,13 +1,11 @@
 <ion-content [fullscreen]="true">
 
-    <ion-button color="primary">Teste 1</ion-button>
-    <ion-button color="secondary">Teste 2</ion-button>
-    <ion-button color="tertiary">Teste 3</ion-button>
-    <ion-button color="quaternary">Teste 4</ion-button>
-    <ion-button color="sucess">Sucesso</ion-button>
-    <ion-button color="danger">Perigo</ion-button>
+ <ion-row *ngFor="let produto of this.lista_compras">
+    <ion-col>Nome: {{produto.nome}}</ion-col>
+    <ion-col *ngIf="produto.promocao" style="color: green">Promocão: Sim</ion-col>
+    <ion-col *ngIf="!produto.promocao" style="color: red">Promocão: Não</ion-col>
+    <ion-col>Preço: R${{produto.preco}}</ion-col>
+    <ion-col>Marca: {{produto.marca}}</ion-col>
+ </ion-row>
 
-    <!--
-    Colors: primary, secondary, tertiary, quaternary, sucess & danger
-    -->    
-</ion-content>
+</ion-content> 

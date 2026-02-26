@@ -12,17 +12,10 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  pokemon:any = {
-    nome: null,
-    poder: null
-  };
-
-  constructor( 
-    public crudService: CrudService
-  ){ }
-
-  enviar() {
-    this.crudService.insert(this.pokemon, 'pokemons');
-  }
-
+lista_compras: any = [
+  {nome:"12GB RAM", preco:659.99, marca:"AMD", promocao: false},
+  {nome: "Monitor 120hz 1488x1288", preco: 349.99, marca:"LG", promocao: true},
+  {nome: "Wireless Mouse", preco: 59.99, marca: "HP", promocao: false},
+  {nome: "Teclado Mecanico", preco: 129.99, marca: "HP", promocao: true}
+]
 }
