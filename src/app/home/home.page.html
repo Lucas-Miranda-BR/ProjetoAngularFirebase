@@ -1,4 +1,27 @@
 <ion-content [fullscreen]="true">
 
-    <ion-button color="primary">Teste</ion-button>  
+    <ion-list>
+        <ng-container *ngFor="let livro of this.livros">
+            <ion-item>
+                <ion-label>Título: {{ livro.titulo }}</ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Sinopse: {{ livro.sinopse }}
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                    Paginas: {{ livro.paginas }}
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>Categorias:</ion-label>
+                <ng-container *ngFor="let categoria of livro.categoria">
+                    <h3 *ngIf="categoria.nome == 'Ficção'" style="color: lightblue"> {{categoria.nome}} </h3>
+                    <h3 style="color: lavenderblush"> {{categoria.nome}} </h3>
+                </ng-container>
+            </ion-item>
+        </ng-container>
+    </ion-list>
 </ion-content>
