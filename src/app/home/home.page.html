@@ -1,4 +1,39 @@
 <ion-content [fullscreen]="true">
 
-    <ion-button color="primary">Teste</ion-button>  
+    <ion-row class="ion-justify-content-center">
+        <ion-col size="4">
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>Cadastro de Veículos</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-input [(ngModel)] = "this.veiculo.modelo" label="Modelo" labelPlacement="floating"></ion-input>
+                    <ion-input [(ngModel)] = "this.veiculo.marca" label="Marca" labelPlacement="floating"></ion-input>
+                    <ion-input [(ngModel)] = "this.veiculo.cor" label="Cor" labelPlacement="floating"></ion-input>
+                    <ion-button color="primary" (click)="cadastrar()">Cadastrar</ion-button>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+        <ion-col size="4">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-title>Veículos Cadastrados</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ng-container *ngFor="let veiculo of this.veiculos">
+                            <ion-item>
+                                Modelo: {{veiculo.modelo}}
+                            </ion-item>
+                            <ion-item>
+                                Marca: {{veiculo.marca}}
+                            </ion-item>
+                            <ion-item>
+                                Cor: {{veiculo.cor}}
+                            </ion-item>
+                        </ng-container>
+                    </ion-card-content>
+                </ion-card>
+        </ion-col>
+    </ion-row>
+
 </ion-content>
